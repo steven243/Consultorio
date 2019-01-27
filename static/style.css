@@ -1,0 +1,123 @@
+
+.main{
+    
+    font-family: "Latin Modern Roman 10";
+    font-style: italic;
+    width: 500px;
+    height: 600px;
+    background-color: #fff;
+    border: black;
+    border-radius: 30px;
+    margin-left: 450px;
+    margin-top: -15px;
+    
+}
+
+#title{
+    
+    font-family: "Latin Modern Roman 10";
+    font-style: italic;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 35px;
+
+}
+
+
+#exampleFormControlSelect1{
+
+    width: 350px;
+    margin-left: 70px;
+    
+}
+
+.sint{
+
+    font-family: "Latin Modern Roman 10";
+    font-style: italic;
+    margin-left: 70px;
+
+}
+
+
+#select{
+    
+    font-family: "Latin Modern Roman 10";
+    font-style: italic;
+    margin-top: 50px;
+
+
+}
+
+#btn{
+    
+    font-family: "Latin Modern Roman 10";
+    font-style: italic;
+    margin-top: 25px;
+    margin-left: 190px;
+
+}
+
+#result{
+
+    font-family: "Latin Modern Roman 10";
+    font-style: italic;
+    background-color:rgb(74, 216, 252);
+    height: 120px;
+    margin-top: 23px;
+    padding-left: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+
+}
+
+
+#res{
+
+    padding-left: 190px;
+    font-size: 30px;
+    margin-top: -48px;
+    color: black;
+
+}
+
+#posible{
+
+    font-size: 30px;
+    padding-top: 20px;
+    padding-left: 35px;
+    color:black;
+
+
+}
+
+p{
+
+    margin-bottom: 0px;
+    margin-left: -10px;
+    text-align: center;
+}
+
+a{
+
+    margin-left: 180px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+
+#recomendacion{
+    
+    padding-top: 30px;
+    padding-right: 10px;
+
+}
+
+
+#enlace{
+
+    margin-left: 0px;
+
+
+}

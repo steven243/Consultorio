@@ -163,7 +163,7 @@ class DiagnosticoEnfermedades(KnowledgeEngine):
         
         
         
-    @Rule(Sintoma(descripcion= s401 and s402 and s403 and s404 and s405))
+    @Rule(Sintoma(descripcion= s401 and s402 and s403 or s404 or s405))
     def enfermedad_4(self):
         self.declare(Enfermedad(codigo=400, recom=r400, tipo=e400))
         

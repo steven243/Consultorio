@@ -142,6 +142,8 @@ s504 = GastritisSint['504']
 s505 = GastritisSint['505']
 r500 = Gastritis['http']
 
+
+
 class DiagnosticoEnfermedades(KnowledgeEngine):
     
             
@@ -163,7 +165,7 @@ class DiagnosticoEnfermedades(KnowledgeEngine):
         
         
         
-    @Rule(Sintoma(descripcion= s401 and s402 and s403 or s404 or s405))
+    @Rule(Sintoma(descripcion= s401 and s402 and s403 and s404 and s405))
     def enfermedad_4(self):
         self.declare(Enfermedad(codigo=400, recom=r400, tipo=e400))
         
@@ -180,7 +182,7 @@ class DiagnosticoEnfermedades(KnowledgeEngine):
 def index():
     return render_template('index.html')
 
-
+    
 
 @app.route('/diagnostico', methods=['POST'])
 def Diagnostico():
@@ -200,15 +202,59 @@ def Diagnostico():
         
 
     sinto5 = request.form['sint5']
+    
+    set2 = set()
 
+    set2.add(sinto1)
+    set2.add(sinto2)
+    set2.add(sinto3)
+    set2.add(sinto4)
+    set2.add(sinto5)
+    
+    
+    set2=list(set2)
+    
+    
+    """for i in range(len(set2)):
+        a = set2[i]
+        print(a)"""
+    
+    #lista1 = [sinto1, sinto2, sinto3, sinto4, sinto5]
+    
+    if (len(set2) == 1):
+        sinto1 = set2[0]
+    elif (len(set2) == 2):
+        sinto1 = set2[0]
+        sinto2 = set2[1]
+    elif (len(set2) == 3):
+        sinto1 = set2[0]
+        sinto2 = set2[1]
+        sinto3 = set2[2]
+    elif (len(set2) == 4):
+        sinto1 = set2[0]
+        sinto2 = set2[1]
+        sinto3 = set2[2]
+        sinto4 = set2[3]
+    else:
+        sinto1 = set2[0]
+        sinto2 = set2[1]
+        sinto3 = set2[2]
+        sinto4 = set2[3]
+        sinto5 = set2[4]
+    
     
     print('-----------------------------------------------------------------------------------------------')
-    print('Síntoma 1: ' + sinto1)
-    print('Síntoma 2: ' + sinto2)
-    print('Síntoma 3: ' + sinto3)
-    print('Síntoma 4: ' + sinto4)
-    print('Síntoma 5: ' + sinto5)
+    
+    
+    for i in range(len(set2)):
+        print('Síntoma ',i + 1, ': ' + set2[i])
+        
+    
     print('-----------------------------------------------------------------------------------------------')
+    
+    
+    print(set2)
+    
     
     #===========================Se cargan los sintomas a los hechos =======================================
        
@@ -233,10 +279,16 @@ def Diagnostico():
             recomendacion = enfermedad[d]['recom']
             resultado = {'resul':tipo}  
             recom = {'reco':recomendacion}
+            
+    
+    print('La enfermedad es: ' + tipo)
        
 
     return render_template('diagnostico.html', resultado=resultado, recom=recom)
 
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template('error.html'), 500
 
 if __name__ == '__main__':
     app.run()
